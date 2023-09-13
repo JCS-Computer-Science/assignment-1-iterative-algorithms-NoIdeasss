@@ -12,24 +12,22 @@ function binarySearch(array, searchTerm) {
 	let mid = Math.floor(temp.length / 2)
 	
 	for (let i = 0; i < array.length; i++) {
+		
 		if(temp[mid] == searchTerm){
-			console.log(mid)
-			return 
+			return array.indexOf(temp[mid])
+
 		} else if(temp[mid] > searchTerm){
 			temp = temp.slice(0 , mid)
 			mid = Math.floor(temp.length / 2)
-		}else if(temp[mid] < searchTerm){
-			temp = temp.slice(mid)
-			mid = Math.floor(temp.length / 2)
+
+		}else if (temp[mid] < searchTerm){
+			temp = temp.slice(mid + 1)
+			mid = Math.floor(temp.length / 6)
+
 		}
-
 	}
-
-
-
 }
 
-binarySearch([1,2,3,4,5,6,7] , 3)
 
 module.exports = binarySearch;
 
