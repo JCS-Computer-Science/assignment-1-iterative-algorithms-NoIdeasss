@@ -7,7 +7,20 @@ function selectionSort(array) {
 	 ** Continue like this until you have only one element left.
 	 */
 
+	
+	for (let i = 0; i < array.length; i++) {
+		small = Math.min(...array.slice(i))
+		sIndex = array.indexOf(small)
+		
+		temp = array[i]
+		array[i] = small
+		array[sIndex] = temp
+
+	}
+	
 	return array;
 }
 
+
+selectionSort([1,3,6,4,0,0,1])
 module.exports = selectionSort;

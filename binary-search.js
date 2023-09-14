@@ -14,15 +14,18 @@ function binarySearch(array, searchTerm) {
 	for (let i = 0; i < array.length; i++) {
 		
 		if(temp[mid] == searchTerm){
-			return array.indexOf(temp[mid])
-
+			for (let i = 0; i < array.length; i++) {
+				if(temp[mid] == array[i]){
+					return i
+				}
+			}
 		} else if(temp[mid] > searchTerm){
 			temp = temp.slice(0 , mid)
 			mid = Math.floor(temp.length / 2)
 
-		}else if (temp[mid] < searchTerm){
+		}else{
 			temp = temp.slice(mid + 1)
-			mid = Math.floor(temp.length / 6)
+			mid = Math.floor(temp.length / 2)
 
 		}
 	}
