@@ -8,8 +8,26 @@ function bubbleSort(array) {
     ** Repeat the above process until you get through an entire
     ** cycle without needing any swaps
     */
+    
 
-	return array;
+    while(true){
+        for (let i = 1; i < array.length; i++) {
+            if(array[i] < array[i-1]){
+                temp = array[i]
+                array[i] = array[i-1]
+                array[i-1] = temp
+                sorted = false
+            }
+        }
+        
+        if(!sorted){
+            sorted = true
+        }else{
+            break
+        }
+    }
+    return array;
 }
+
 
 module.exports = bubbleSort;

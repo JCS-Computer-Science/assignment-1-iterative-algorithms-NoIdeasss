@@ -10,17 +10,14 @@ function selectionSort(array) {
 	
 	for (let i = 0; i < array.length; i++) {
 		small = Math.min(...array.slice(i))
-		sIndex = array.indexOf(small)
+		sIndex = array.indexOf(small , i)
 		
 		temp = array[i]
 		array[i] = small
 		array[sIndex] = temp
-
 	}
 	
 	return array;
 }
 
-
-selectionSort([1,3,6,4,0,0,1])
 module.exports = selectionSort;
